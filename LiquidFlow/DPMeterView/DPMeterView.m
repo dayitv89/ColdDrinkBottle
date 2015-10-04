@@ -477,7 +477,7 @@
     // http://en.wikipedia.org/wiki/Conversion_between_quaternions_and_Euler_angles
     CMQuaternion quat = self.motionManager.deviceMotion.attitude.quaternion;
     double yaw = asin(2*(quat.x*quat.z - quat.w*quat.y));
-
+    self.myGravityBlock(yaw);
     // TODO improve the yaw interval (stuck to [-PI/2, PI/2] due to arcsin definition
     
     yaw *= -1;      // reverse the angle so that it reflect a *liquid-like* behavior
@@ -499,7 +499,6 @@
     x = x + k*(yaw - x);
     p = (1 - k)*p;
     self.motionLastYaw = x;
-    self.myGravityBlock(x);
     // update starting & ending point of the gradient
     [self setGradientOrientationAngle:x];
 }

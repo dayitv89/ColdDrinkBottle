@@ -14,7 +14,9 @@
 #import <QuartzCore/QuartzCore.h>
 #import <CoreMotion/CoreMotion.h>
 
-@interface ViewController ()
+@interface ViewController () {
+    CGFloat shakeColor;
+}
 @property (nonatomic, strong) CMMotionManager* motionManager;
 @property (nonatomic, strong) CADisplayLink* motionDisplayLink;
 @property (nonatomic) float motionLastYaw;
@@ -24,11 +26,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-//    [self.shapeView setHidden:YES];
+    
+    //    [self.shapeView setHidden:YES];
     [self DPMeterView];
     
-//    [self BAFluidView];
+    //    [self BAFluidView];
 }
 
 - (void)BAFluidView {
@@ -46,7 +48,7 @@
     [fluidView fillTo:@0.9];
     [fluidView setFillAutoReverse:NO];
     [fluidView setFillRepeatCount:1];
-//    [fluidView startAnimation];
+    //    [fluidView startAnimation];
     [self.view addSubview:fluidView];
     
     UIImage *maskingImage = [UIImage imageNamed:@"icon"];
@@ -129,8 +131,44 @@
 
 
 
+#pragma mark - shake motion detection
+-(BOOL)canBecomeFirstResponder {
+    return YES;
+}
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self updateProgressWithDelta:0.7 animated:YES];
+    
+    [self becomeFirstResponder];
+    
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
+       initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = .5; //seconds
+    lpgr.delaysTouchesBegan = YES;
+    [self.view addGestureRecognizer:lpgr];
+}
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [self resignFirstResponder];
+    [super viewWillDisappear:animated];
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (motion == UIEventSubtypeMotionShake) {
+        shakeColor += shakeColor >= .4 ? -.2 : 1.f;
+        self.shapeView.progressTintColor = [UIColor colorWithRed:76/255.f green:116/255.f blue:206/255.f alpha:shakeColor];
+    }
+}
+
+-(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
+        return;
+    }
+    [self.shapeView setProgress:0.7 animated:YES];
+}
 
 
 
@@ -146,8 +184,9 @@
     [[DPMeterView appearance] setTrackTintColor:[UIColor lightGrayColor]];
     [[DPMeterView appearance] setProgressTintColor:[UIColor darkGrayColor]];
     
+    shakeColor = 1.f;
     [self.shapeView setShape:[UIBezierPath coldDrinkShape:self.shapeView.frame].CGPath];
-    self.shapeView.progressTintColor = [UIColor colorWithRed:76/255.f green:116/255.f blue:206/255.f alpha:1.f];
+    self.shapeView.progressTintColor = [UIColor colorWithRed:76/255.f green:116/255.f blue:206/255.f alpha:shakeColor];
     
     // swith on the gravity
     __block BOOL flag = true;
@@ -155,25 +194,18 @@
         NSLog(@"yaw %lf", yaw);
         if (yaw > .7 && flag) {
             flag = false;
-           [self.shapeView minus:fabs(-0.4) animated:YES];
+            [self.shapeView minus:fabs(-0.05) animated:YES];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                flag = true;
+            });
         }
     }];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
     
-    [self updateProgressWithDelta:0.7 animated:YES];
+    
+    
 }
 
-- (NSUInteger)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskPortrait;
-}
-
-- (NSArray *)shapeViews
-{
+- (NSArray *)shapeViews {
     NSMutableArray *shapeViews = [NSMutableArray array];
     
     NSArray *candidateViews = @[self.shapeView];
@@ -217,7 +249,7 @@
 //    CGFloat value = self.orientationSlider.value;
 //    CGFloat angle = (M_PI/180) * value;
 //    self.orientationLabel.text = [NSString stringWithFormat:@"orientation (%.0f°)", value];
-//    
+//
 //    for (DPMeterView *v in [self shapeViews]) {
 //        [v setGradientOrientationAngle:angle];
 //    }
