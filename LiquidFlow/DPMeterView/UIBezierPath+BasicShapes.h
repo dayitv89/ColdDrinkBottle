@@ -17,4 +17,6 @@
 + (UIBezierPath *)starShape:(CGRect)originalFrame;
 + (UIBezierPath *)stars:(NSUInteger)numberOfStars shapeInFrame:(CGRect)originalFrame;
 
++ (UIBezierPath *)coldDrinkShape:(CGRect)originalFrame;
+
 @end

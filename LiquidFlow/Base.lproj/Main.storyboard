@@ -13,78 +13,21 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="DEf-Dy-gDc">
-                                <rect key="frame" x="245" y="517" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <action selector="toggleGravity:" destination="Mfz-Ne-fBB" eventType="valueChanged" id="HeD-AS-4Kf"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="gravity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yvz-Ym-pBZ">
-                                <rect key="frame" x="32" y="524" width="141" height="21"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" id="5vC-PN-LFQ" customClass="DPMeterView">
-                                <rect key="frame" x="28" y="25" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" id="Knx-mE-0UC" customClass="DPMeterView">
-                                <rect key="frame" x="172" y="25" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="scaleToFill" id="DCg-Jv-nJZ" customClass="DPMeterView">
                                 <rect key="frame" x="28" y="173" width="120" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" id="q4t-Vr-5AR" customClass="DPMeterView">
-                                <rect key="frame" x="172" y="209" width="120" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="orientation (90°)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RlV-zv-mee">
-                                <rect key="frame" x="32" y="487" width="140" height="21"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="90" minValue="0.0" maxValue="360" id="GfO-mq-CTM">
-                                <rect key="frame" x="178" y="481" width="118" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <action selector="orientationHasChanged:" destination="Mfz-Ne-fBB" eventType="valueChanged" id="U1Y-yR-nHe"/>
-                                </connections>
-                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="0%" id="sMI-Rq-RzG">
-                        <barButtonItem key="leftBarButtonItem" title="Decrease" id="IdU-ul-VBA">
-                            <connections>
-                                <action selector="minus:" destination="Mfz-Ne-fBB" id="Mr6-VQ-80S"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Increase" id="X8k-g6-i0B">
-                            <connections>
-                                <action selector="add:" destination="Mfz-Ne-fBB" id="eqi-aU-xeN"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Decrease" id="IdU-ul-VBA"/>
+                        <barButtonItem key="rightBarButtonItem" title="Increase" id="X8k-g6-i0B"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="gravitySwitch" destination="DEf-Dy-gDc" id="Xvt-gE-h8V"/>
-                        <outlet property="orientationLabel" destination="RlV-zv-mee" id="7d8-YB-2u6"/>
-                        <outlet property="orientationSlider" destination="GfO-mq-CTM" id="JbG-0X-6Cj"/>
-                        <outlet property="shape1View" destination="5vC-PN-LFQ" id="C4F-xo-V5Z"/>
-                        <outlet property="shape2View" destination="Knx-mE-0UC" id="Y0T-0U-IJ5"/>
-                        <outlet property="shape3View" destination="DCg-Jv-nJZ" id="Mrh-at-ohD"/>
-                        <outlet property="shape4View" destination="q4t-Vr-5AR" id="OXb-f5-Y02"/>
+                        <outlet property="shapeView" destination="DCg-Jv-nJZ" id="rR5-FV-lr2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RwK-jI-nwQ" sceneMemberID="firstResponder"/>
