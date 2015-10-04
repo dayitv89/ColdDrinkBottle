@@ -224,6 +224,8 @@
     
     [bezierPath addCurveToPoint: CGPointMake(CGRectGetMinX(frame) + 0.67084 * CGRectGetWidth(frame), CGRectGetMinY(frame) + 0.01163 * CGRectGetHeight(frame)) controlPoint1: CGPointMake(CGRectGetMinX(frame) + 0.62461 * CGRectGetWidth(frame), CGRectGetMinY(frame) + 0.09553 * CGRectGetHeight(frame)) controlPoint2: CGPointMake(CGRectGetMinX(frame) + 0.62442 * CGRectGetWidth(frame), CGRectGetMinY(frame) + 0.05885 * CGRectGetHeight(frame))];
     
+//    [bezierPath addCurveToPoint: CGPointMake(CGRectGetMinX(frame) + 0.67084 * CGRectGetWidth(frame), CGRectGetMinY(frame) + 0.01163 * CGRectGetHeight(frame)) controlPoint1: CGPointMake(CGRectGetMinX(frame) + 0.62461 * CGRectGetWidth(frame), CGRectGetMinY(frame) + 0.09553 * CGRectGetHeight(frame)) controlPoint2: CGPointMake(CGRectGetMinX(frame) + 0.62442 * CGRectGetWidth(frame), CGRectGetMinY(frame) + 0.05885 * CGRectGetHeight(frame))];
+    
     
     [bezierPath addLineToPoint: CGPointMake(CGRectGetMinX(frame) + 0.33609 * CGRectGetWidth(frame), CGRectGetMinY(frame) + 0.01179 * CGRectGetHeight(frame))];
     

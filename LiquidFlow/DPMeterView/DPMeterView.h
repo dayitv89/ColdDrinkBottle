@@ -19,6 +19,8 @@ typedef NS_ENUM(NSInteger, DPMeterType) {
 };
 
 
+typedef void (^gravityBlock)(double yaw);
+
 @interface DPMeterView : UIView <UIAppearance>
 
 @property (nonatomic) DPMeterType meterType;
@@ -51,6 +53,7 @@ typedef NS_ENUM(NSInteger, DPMeterType) {
 // Gravity Motion
 - (BOOL)isGravityActive;
 - (void)startGravity;
+- (void)startGravity:(gravityBlock)gravityBlock;
 - (void)stopGravity;
 
 @end
