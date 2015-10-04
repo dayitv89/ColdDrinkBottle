@@ -12,7 +12,10 @@
 		A4734C741BC182CC00EC7F73 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4734C731BC182CC00EC7F73 /* ViewController.m */; };
 		A4734C771BC182CC00EC7F73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4734C751BC182CC00EC7F73 /* Main.storyboard */; };
 		A4734C791BC182CC00EC7F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4734C781BC182CC00EC7F73 /* Assets.xcassets */; };
-		A4734C7C1BC182CC00EC7F73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4734C7A1BC182CC00EC7F73 /* LaunchScreen.storyboard */; };
+		A4734C851BC182F600EC7F73 /* BAFluidView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4734C831BC182F600EC7F73 /* BAFluidView.m */; };
+		A4B32DD91BC18D8100AD4F96 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B32DD81BC18D8100AD4F96 /* icon.png */; };
+		A4B32DE61BC1907400AD4F96 /* DPMeterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B32DE31BC1907400AD4F96 /* DPMeterView.m */; };
+		A4B32DE71BC1907400AD4F96 /* UIBezierPath+BasicShapes.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B32DE51BC1907400AD4F96 /* UIBezierPath+BasicShapes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +27,14 @@
 		A4734C731BC182CC00EC7F73 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A4734C761BC182CC00EC7F73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4734C781BC182CC00EC7F73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A4734C7B1BC182CC00EC7F73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4734C7D1BC182CC00EC7F73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4734C831BC182F600EC7F73 /* BAFluidView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAFluidView.m; sourceTree = "<group>"; };
+		A4734C841BC182F600EC7F73 /* BAFluidView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAFluidView.h; sourceTree = "<group>"; };
+		A4B32DD81BC18D8100AD4F96 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		A4B32DE21BC1907400AD4F96 /* DPMeterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPMeterView.h; sourceTree = "<group>"; };
+		A4B32DE31BC1907400AD4F96 /* DPMeterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMeterView.m; sourceTree = "<group>"; };
+		A4B32DE41BC1907400AD4F96 /* UIBezierPath+BasicShapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+BasicShapes.h"; sourceTree = "<group>"; };
+		A4B32DE51BC1907400AD4F96 /* UIBezierPath+BasicShapes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+BasicShapes.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +67,16 @@
 		A4734C6B1BC182CC00EC7F73 /* LiquidFlow */ = {
 			isa = PBXGroup;
 			children = (
+				A4734C841BC182F600EC7F73 /* BAFluidView.h */,
+				A4734C831BC182F600EC7F73 /* BAFluidView.m */,
 				A4734C6F1BC182CC00EC7F73 /* AppDelegate.h */,
 				A4734C701BC182CC00EC7F73 /* AppDelegate.m */,
 				A4734C721BC182CC00EC7F73 /* ViewController.h */,
 				A4734C731BC182CC00EC7F73 /* ViewController.m */,
+				A4B32DD81BC18D8100AD4F96 /* icon.png */,
 				A4734C751BC182CC00EC7F73 /* Main.storyboard */,
+				A4B32DE11BC1907400AD4F96 /* DPMeterView */,
 				A4734C781BC182CC00EC7F73 /* Assets.xcassets */,
-				A4734C7A1BC182CC00EC7F73 /* LaunchScreen.storyboard */,
 				A4734C7D1BC182CC00EC7F73 /* Info.plist */,
 				A4734C6C1BC182CC00EC7F73 /* Supporting Files */,
 			);
@@ -77,6 +89,17 @@
 				A4734C6D1BC182CC00EC7F73 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4B32DE11BC1907400AD4F96 /* DPMeterView */ = {
+			isa = PBXGroup;
+			children = (
+				A4B32DE21BC1907400AD4F96 /* DPMeterView.h */,
+				A4B32DE31BC1907400AD4F96 /* DPMeterView.m */,
+				A4B32DE41BC1907400AD4F96 /* UIBezierPath+BasicShapes.h */,
+				A4B32DE51BC1907400AD4F96 /* UIBezierPath+BasicShapes.m */,
+			);
+			path = DPMeterView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,9 +159,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4734C7C1BC182CC00EC7F73 /* LaunchScreen.storyboard in Resources */,
 				A4734C791BC182CC00EC7F73 /* Assets.xcassets in Resources */,
 				A4734C771BC182CC00EC7F73 /* Main.storyboard in Resources */,
+				A4B32DD91BC18D8100AD4F96 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,8 +172,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4B32DE71BC1907400AD4F96 /* UIBezierPath+BasicShapes.m in Sources */,
 				A4734C741BC182CC00EC7F73 /* ViewController.m in Sources */,
+				A4B32DE61BC1907400AD4F96 /* DPMeterView.m in Sources */,
 				A4734C711BC182CC00EC7F73 /* AppDelegate.m in Sources */,
+				A4734C851BC182F600EC7F73 /* BAFluidView.m in Sources */,
 				A4734C6E1BC182CC00EC7F73 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,14 +190,6 @@
 				A4734C761BC182CC00EC7F73 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A4734C7A1BC182CC00EC7F73 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A4734C7B1BC182CC00EC7F73 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -213,7 +231,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -250,7 +268,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -261,10 +279,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = LiquidFlow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gds.LiquidFlow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "164ddf80-5adf-44a5-be42-567c50aba619";
 			};
 			name = Debug;
 		};
@@ -272,10 +294,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = LiquidFlow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gds.LiquidFlow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "164ddf80-5adf-44a5-be42-567c50aba619";
 			};
 			name = Release;
 		};
@@ -298,6 +324,7 @@
 				A4734C821BC182CC00EC7F73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
